@@ -1,4 +1,4 @@
-const db = require('../../data/dbn-config')
+const db = require('../../data/db-config')
 /*
   If `scheme_id` does not exist in the database:
 
@@ -14,7 +14,7 @@ const checkSchemeId = async (req, res, next) => {
     if (!existing) {
       next({
         status: 404,
-        message: `scheme with the scheme_id ${req.params.scheme_id} not found`
+        message: `scheme with scheme_id ${req.params.scheme_id} not found`
       })
     } else {
       next()
